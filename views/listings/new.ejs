@@ -1,0 +1,111 @@
+<%- layout("/layouts/boilerplate") %>
+<body>
+  <div class="row">
+    <div class="col-8 offset-2">
+      <br /><br />
+      <h3>Create a New Listings</h3>
+      <form
+        method="post"
+        action="/listings"
+        class="needs-validation"
+        novalidate
+        enctype="multipart/form-data"
+      >
+        <div class="mb-3">
+          <label for="title" class="form-label">Title</label>
+          <input
+            type="text"
+            placeholder="Add title"
+            name="listing[title]"
+            class="form-control"
+            required
+          />
+          <div class="invalid-feedback">Enter a valid Title</div>
+        </div>
+
+        <div class="mb-3">
+          <label for="description" class="form-label">Description</label>
+          <textarea
+            rows="4"
+            cols="23"
+            placeholder="Description?"
+            name="listing[description]"
+            class="form-control"
+            required
+          ></textarea>
+          <div class="invalid-feedback">Enter a valid Description</div>
+        </div>
+
+        <div class="row">
+          <div class="mb-3 col-md-8">
+            <label for="image" class="form-label">Upload Image</label>
+            <input
+              type="file"
+              name="listing[image]"
+              class="form-control"
+              required
+            />
+            <div class="invalid-feedback">Upload a valid image</div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="image" class="form-label">Category</label>
+            <select class="form-select" aria-label="Default select example" name="listing[category]" required>
+              <option value="farm">Farm</option>
+              <option value="city">City</option>
+              <option value="rooms">Rooms</option>
+              <option selected value="trending">Trending</option>
+              <option value="mountains">Mountains</option>
+              <option value="fort">Fort</option>
+              <option value="camping">Camping</option>
+              <option value="swimmingpool">Beach</option>
+              <option value="arctic">Arctic</option>
+            </select>
+            <div class="invalid-feedback">Select a valid category</div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="mb-3 col-md-4">
+            <label for="price" class="form-label">Price</label>
+            <input
+              type="number"
+              placeholder="₹1500"
+              min="0"
+              name="listing[price]"
+              class="form-control"
+              required
+            />
+            <div class="invalid-feedback">min price ₹0</div>
+          </div>
+          <div class="mb-3 col-md-8">
+            <label for="country" class="form-label">Country</label>
+            <input
+              type="text"
+              placeholder="India"
+              name="listing[country]"
+              class="form-control"
+              required
+            />
+            <div class="invalid-feedback">Not a valid Country Name</div>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="location" class="form-label">Location</label>
+          <input
+            type="text"
+            placeholder="Jaipur, Gurgaon, Palwal"
+            name="listing[location]"
+            class="form-control"
+            required
+          />
+          <div class="invalid-feedback">Not a valid Location</div>
+        </div>
+        <br /><br />
+        <button class="btn btn-dark add-btn">submit</button>
+        <br /><br /><br /><br />
+      </form>
+    </div>
+  </div>
+  <script src="/js/new.js"></script>
+</body>

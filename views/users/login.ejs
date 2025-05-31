@@ -1,0 +1,38 @@
+<%- layout("/layouts/boilerplate.ejs") %>
+
+<div class="row mt-3">
+  <h2 class="col-6 offset-4 mb-5">Login for WanderLust</h2>
+  <div class="col-4 offset-4">
+    <form method="post" action="/login" novalidate class="needs-validation">
+      <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input
+          type="text"
+          class="form-control"
+          id="username"
+          name="username"
+          required
+        />
+        <div class="invalid-feedback">Invalid Username</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          name="password"
+          required
+        />
+        <div class="invalid-feedback">Invalid Password</div>
+      </div>
+
+      <div class="d-flex justify-content-between gap-5">
+        <button class="btn btn-success all-btn w-100">LogIn</button>
+        <a href="/signup" class="btn btn-success all-btn w-100">SignUp</a>
+      </div>
+    </form>
+  </div>
+</div>
+<script src="js/script.js"></script>

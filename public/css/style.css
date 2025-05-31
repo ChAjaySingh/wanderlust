@@ -1,0 +1,181 @@
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  flex: 1;
+}
+
+.navbar {
+  height: 5rem;
+  background-color: wheat;
+}
+
+.fa-compass {
+  color: #ff385d;
+  font-size: 2rem;
+}
+
+.nav-link {
+  color: #222222 !important;
+}
+
+.f-info-links a {
+  text-decoration: none;
+  color: #222222;
+}
+.f-info-links a:hover {
+  text-decoration: underline;
+}
+
+.f-info-social,
+.f-info-links {
+  width: 100%;
+}
+
+.f-info-social i {
+  font-size: 1.2rem;
+  margin-right: 0.5rem;
+}
+
+.f-info {
+  text-align: center;
+  display: flex;
+  height: 8rem;
+  background-color: antiquewhite;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.listing-card {
+  border: none;
+  margin-bottom: 0.5rem;
+}
+
+.card-img-top {
+  border-radius: 1rem;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 0;
+}
+
+.card-text {
+  margin-top: 0.2rem;
+  font-weight: 400;
+}
+
+.listing-link {
+  text-decoration: none;
+}
+
+/* Card Effect */
+.card-img-overlay {
+  opacity: 0;
+  background-color: white;
+}
+.card-img-overlay:hover {
+  opacity: 0.2;
+}
+
+/* new page */
+.add-btn {
+  background-color: #ff385d;
+  border: none;
+}
+
+/* edit page */
+.edit-btn {
+  background-color: #ff385d;
+  border: none;
+}
+
+/* show page */
+.show-img {
+  height: 40vh;
+}
+
+.show-btn {
+  background-color: #ff385d;
+  border: none;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.all-btn {
+  background-color: #ff385d;
+  border: none;
+}
+
+.previewOgImg {
+  width: 200px;
+  object-fit: fill;
+}
+
+.tax-info{
+  display: none;
+}
+
+  .btn-search {
+    background-color: #ff385d;
+    color: white;
+    border-radius: 1.5rem;
+    padding: 0.3rem 1rem;
+  }
+  .btn-search:hover {
+    background-color: #ff385d;
+    color: white;
+  }
+  .btn-search i {
+    display: inline;
+    margin-right: 0.5rem;
+  }
+
+  .search-input {
+    border-radius: 1.5rem;
+    padding: 0.3rem 3rem;
+  }
+
+    #filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .filter {
+    text-align: center;
+    margin-right: 2rem;
+    margin-top: 1.2rem;
+    opacity: 0.7;
+  }
+
+  .filter:hover {
+    opacity: 1;
+    cursor: pointer;
+  }
+
+  .filter p {
+    font-size: 0.8rem;
+  }
+
+  .filter a {
+    text-decoration: none;
+    color: black;
+  }
+
+  .tax-toggle {
+    border: 1px solid black;
+    border-radius: 1rem;
+    height: 3rem;
+    padding: 1rem;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+  }

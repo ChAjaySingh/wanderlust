@@ -1,0 +1,76 @@
+<%- layout("/layouts/boilerplate.ejs") %>
+<body>
+    <div class="row mt-3">
+        <div class="col-8 offset-2">
+            <h3>Edit Listing</h3>
+            <form method="post" action="/listings/<%= listing._id %>?_method=PATCH" enctype="multipart/form-data" novalidate class="needs-validation">
+                <div class="mb-3">
+                    <label class="form-label" for="title" class="form-label">Title</label>
+                    <input class="form-control" type="text" placeholder="Enter title" name="listing[title]" value="<%= listing.title%>" required>
+                    <div class="valid-feedback">Looks good</div>
+                    <div class="invalid-feedback">Title shoud be valid</div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="description">Description</label>
+                    <textarea class="form-control"  rows="4" cols="20" placeholder="Description?" name="listing[description]" required><%= listing.description%></textarea>
+                    <div class="invalid-feedback">Enter short description</div>
+                    </div>
+
+                    <!-- image preview -->
+                    <div class="mb-3">
+                        Original Listed Image
+                        <br>
+                        <img class="previewOgImg" src="<%= previewOgImg %>" alt="">
+                    </div>
+                    <div class="row">
+
+                        <div class="mb-3 col-md-8 mb-3">
+                            <label class="form-label" for="image">Upload Image</label>
+                            <input class="form-control" type="file" name="listing[image]">
+                            <!-- <input class="form-control" type="text" placeholder="Enter image Link/URL" name="listing[image]" value="<%= listing.image%>" required> -->
+                            <div class="invalid-feedback">Upload a valid image</div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="image" class="form-label">Category</label>
+                            <select class="form-select" aria-label="Default select example" name="listing[category]" required>
+                                <!-- <option selected>Select Category</option> -->
+                                <option value="farm" <%= listing.category === "farm" ? "selected" : "" %>>Farm</option>
+                                <option value="city" <%= listing.category === "city" ? "selected" : "" %>>City</option>
+                                <option value="rooms" <%= listing.category === "rooms" ? "selected" : "" %>>Rooms</option>
+                                <option value="trending" <%= listing.category === "trending" ? "selected" : "" %>>Trending</option>
+                                <option value="mountains" <%= listing.category === "mountains" ? "selected" : "" %>>Mountains</option>
+                                <option value="fort" <%= listing.category === "fort" ? "selected" : "" %>>Fort</option>
+                                <option value="camping" <%= listing.category === "camping" ? "selected" : "" %>>Camping</option>
+                                <option value="swimmingPool" <%= listing.category === "swimmingPool" ? "selected" : "" %>>Beach</option>
+                                <option value="arctic" <%= listing.category === "arctic" ? "selected" : "" %>>Arctic</option>
+                            </select>
+                            <div class="invalid-feedback">Select a valid category</div>
+                        </div>
+                    </div>
+                        
+                    <div class="row" class="mb-3">
+                        <div class="col-md-4">
+                            <label class="form-label" for="price">Price</label>
+                            <input class="form-control" type="number" min="0" placeholder="Enter price" name="listing[price]" value="<%= listing.price%>" required>
+                            <div class="invalid-feedback">min price ₹0</div>
+                        </div>
+                        <div class="col-md-8">
+                            <label class="form-label" for="country">Country</label>
+                            <input class="form-control" type="text" placeholder="Enter country" name="listing[country]" value="<%= listing.country%>" required>
+                            <div class="invalid-feedback">Country name should be valid</div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="location">Location</label>
+                        <input class="form-control" type="text" placeholder="Enter location" name="listing[location]" value="<%= listing.location%>" required>
+                        <div class="invalid-feedback">Not a valid location</div>
+                    </div>
+                    <br><br>
+                    <button class="btn btn-dark edit-btn">Submit</button>
+                    <br><br><br>
+                </form>
+        </div>
+    </div>
+    <script src="/js/edit.js"></script>
+</body>
+</html>
