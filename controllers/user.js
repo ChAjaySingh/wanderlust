@@ -1,9 +1,16 @@
 const User = require("../models/user.js");
 
 module.exports.renderSignupForm = (req, res) => {
-  req.session.dirLogin = req.headers.referer.replace(
-      "http://localhost:8080", ""
-    );
+  if (req.headers.referer) {
+    try {
+      const refererUrl = new URL(req.headers.referer);
+      req.session.dirLogin = refererUrl.pathname;
+    } catch (e) {
+      req.session.dirLogin = "/listings";
+    }
+  } else {
+    req.session.dirLogin = "/listings";
+  }
   res.render("users/signup.ejs");
 };
 
@@ -26,9 +33,16 @@ module.exports.signup = async (req, res) => {
 };
 
 module.exports.renderLoginForm = (req, res) => {
-  req.session.dirLogin = req.headers.referer.replace(
-      "http://localhost:8080", ""
-    );
+  if (req.headers.referer) {
+    try {
+      const refererUrl = new URL(req.headers.referer);
+      req.session.dirLogin = refererUrl.pathname;
+    } catch (e) {
+      req.session.dirLogin = "/listings";
+    }
+  } else {
+    req.session.dirLogin = "/listings";
+  }
   res.render("users/login.ejs");
 };
 
