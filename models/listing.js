@@ -28,8 +28,29 @@ const listingSchema = new Schema({
   },
   category: {
     type: String,
-    enum: ["trending", "rooms", "city", "mountains", "fort", "swimmingPool", "camping", "farm", "arctic"],
-  }
+    enum: [
+      "trending",
+      "rooms",
+      "city",
+      "mountains",
+      "fort",
+      "swimmingPool",
+      "camping",
+      "farm",
+      "arctic",
+    ],
+  },
+  geometry: {
+    type: {
+      type: String, // Don't do `{ location: { type: String } }`
+      enum: ["Point"], // 'location.type' must be 'Point'
+      required: true,
+    },
+    coordinates: {
+      type: [Number],
+      required: true,
+    },
+  },
 });
 
 // post middleware for listing
